@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="./style/home.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Cal+Sans&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tektur:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo">
+        <button class="button" data-text="Awesome">
+          <span class="actual-text">&nbsp;MongoUniverse&nbsp;</span>
+          <span aria-hidden="true" class="hover-text"
+            >&nbsp;MongoUniverse&nbsp;</span
+          >
+        </button>
+      </div>
+
+      <div class="nav-center">
+        <div class="nav-links">
+          <a href="#">Home</a>
+          <a
+            href="#"
+            id="roadmapBtn"
+            aria-haspopup="dialog"
+            aria-controls="roadmapModal"
+            >Roadmap</a
+          >
+          <a href="#" id="quizLink">Quizzes</a>
+          <a href="#">About</a>
+          <a href="#contactSection" class="nav-link">Contact</a>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <a href="#" class="login-btn">Login</a>
+        <label class="switch">
+          <input id="input" type="checkbox" />
+          <div class="slider round">
+            <div class="sun-moon">
+              <svg id="moon-dot-1" class="moon-dot" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50" />
+              </svg>
+              <svg id="moon-dot-2" class="moon-dot" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50" />
+              </svg>
+              <svg id="moon-dot-3" class="moon-dot" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50" />
+              </svg>
+              <svg id="light-ray-1" class="light-ray" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50" />
+              </svg>
+              <svg id="light-ray-2" class="light-ray" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50" />
+              </svg>
+              <svg id="light-ray-3" class="light-ray" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50" />
+              </svg>
+
+              <svg id="cloud-1" class="cloud-dark" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50" />
+              </svg>
+              <svg id="cloud-2" class="cloud-dark" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50" />
+              </svg>
+              <svg id="cloud-3" class="cloud-dark" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50" />
+              </svg>
+              <svg id="cloud-4" class="cloud-light" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50" />
+              </svg>
+              <svg id="cloud-5" class="cloud-light" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50" />
+              </svg>
+              <svg id="cloud-6" class="cloud-light" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50" />
+              </svg>
+            </div>
+
+            <div class="stars">
+              <svg id="star-1" class="star" viewBox="0 0 20 20">
+                <path
+                  d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"
+                />
+              </svg>
+              <svg id="star-2" class="star" viewBox="0 0 20 20">
+                <path
+                  d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"
+                />
+              </svg>
+              <svg id="star-3" class="star" viewBox="0 0 20 20">
+                <path
+                  d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"
+                />
+              </svg>
+              <svg id="star-4" class="star" viewBox="0 0 20 20">
+                <path
+                  d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"
+                />
+              </svg>
+            </div>
+          </div>
+        </label>
+      </div>
+    </nav>
+    <div class="page-wrapper">
+      <main class="dark">
+        <!-- Hero Section -->
+        <section class="hero">
+          <div class="hero-content">
+            <h1 class="hero-title">Master MongoDB Like Never Before</h1>
+            <p class="hero-subtitle" id="typingText"></p>
+            <div class="hero-buttons">
+              <a href="#" class="btn btn-primary" id="startLearningBtn"
+                >Start Learning Now</a
+              >
+            </div>
+            <div class="scroll-indicator">
+              <span>Scroll to explore</span>
+              <div class="mouse">
+                <div class="wheel"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="logo-container">
+              <img
+                src="https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg"
+                alt="MongoDB Logo"
+                class="mongo-logo"
+              />
+              <div class="orbit">
+                <div class="satellite" data-speed="0.02"></div>
+                <div class="satellite" data-speed="0.03"></div>
+                <div class="satellite" data-speed="0.04"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+          <div class="section-header">
+            <h2>Why Learn With MongoUniverse?</h2>
+            <p>
+              Our platform offers everything you need to become a MongoDB expert
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-project-diagram"></i>
+              </div>
+              <h3>Structured Learning Path</h3>
+              <p>
+                Follow our carefully designed roadmap from basics to advanced
+                concepts in logical progression.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <h3>Interactive Exercises</h3>
+              <p>
+                Practice with real MongoDB queries in our browser-based sandbox
+                environment.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-tasks"></i>
+              </div>
+              <h3>Hands-on Projects</h3>
+              <p>
+                Build portfolio-worthy projects that demonstrate real-world
+                MongoDB skills.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3>Performance Tracking</h3>
+              <p>
+                Monitor your progress with detailed analytics and skill
+                assessments.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Learning Path Preview -->
+        <section class="learning-path">
+          <div class="section-header">
+            <h2>Your MongoDB Journey</h2>
+            <p>Here's what you'll master in our comprehensive curriculum</p>
+          </div>
+
+          <div class="path-timeline">
+            <div class="timeline-item">
+              <div class="timeline-marker">
+                <div class="marker-dot"></div>
+                <div class="marker-line"></div>
+              </div>
+              <div class="timeline-content">
+                <h3>Fundamentals</h3>
+                <ul>
+                  <li>NoSQL Concepts</li>
+                  <li>CRUD Operations</li>
+                  <li>Document Structure</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker">
+                <div class="marker-dot"></div>
+                <div class="marker-line"></div>
+              </div>
+              <div class="timeline-content">
+                <h3>Intermediate Skills</h3>
+                <ul>
+                  <li>Schema Design</li>
+                  <li>Indexing Strategies</li>
+                  <li>Aggregation Framework</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker">
+                <div class="marker-dot"></div>
+                <div class="marker-line"></div>
+              </div>
+              <div class="timeline-content">
+                <h3>Advanced Topics</h3>
+                <ul>
+                  <li>Sharding & Replication</li>
+                  <li>Performance Optimization</li>
+                  <li>Security Best Practices</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker">
+                <div class="marker-dot"></div>
+                <div class="marker-line"></div>
+              </div>
+              <div class="timeline-content">
+                <h3>Real-world Applications</h3>
+                <ul>
+                  <li>Node.js Integration</li>
+                  <li>Cloud Deployment</li>
+                  <li>Full-stack Projects</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+          <div class="section-header">
+            <h2>What Our Learners Say</h2>
+            <p>
+              Join thousands of developers who transformed their careers with
+              MongoDB
+            </p>
+          </div>
+
+          <div class="testimonial-carousel">
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <p>
+                  "MongoUniverse took me from zero to MongoDB hero in just 3
+                  months. The structured approach made complex concepts easy to
+                  understand."
+                </p>
+              </div>
+              <div class="testimonial-author">
+                <img src="" alt="Mekala Lavan Kumar" />
+                <div>
+                  <h4>Mekala Lavan Kumar</h4>
+                  <span>Backend Developer</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <p>
+                  "The hands-on projects were game-changers for my portfolio. I
+                  landed a MongoDB-focused role thanks to what I built here."
+                </p>
+              </div>
+              <div class="testimonial-author">
+                <img src="" alt="Mekala Lavan Kumar" />
+                <div>
+                  <h4>Mekala Lavan Kumar</h4>
+                  <span>Full-stack Engineer</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <p>
+                  "As a team lead, I recommend MongoUniverse to all my junior
+                  devs. It's the most comprehensive MongoDB resource I've
+                  found."
+                </p>
+              </div>
+              <div class="testimonial-author">
+                <img src="" alt="Mekala Lavan Kumar" />
+                <div>
+                  <h4>Mekala Lavan Kumar</h4>
+                  <span>Tech Lead</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--contact CTA Section -->
+        <section id="contactSection" class="compact-contact">
+          <div class="contact-container">
+            <div class="contact-header">
+              <h2>Need MongoDB Help?</h2>
+              <p>Our experts are ready to assist you</p>
+            </div>
+
+            <div class="contact-columns">
+              <div class="contact-options">
+                <div class="contact-method">
+                  <i class="fas fa-envelope"></i>
+                  <div>
+                    <h3>Email Us</h3>
+                    <p>support@mongouniverse.com</p>
+                  </div>
+                </div>
+
+                <div class="contact-method">
+                  <i class="fas fa-comment-dots"></i>
+                  <div>
+                    <h3>Live Chat</h3>
+                    <p>Available 9AM-5PM EST</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="message-box">
+                <form id="quickMessageForm">
+                  <input
+                    type="hidden"
+                    name="subject"
+                    value="Contact Us from MongoUniverse Website"
+                  />
+                  <div class="form-row">
+                    <div class="form-group half-width">
+                      <input
+                        type="text"
+                        name="from_name"
+                        placeholder="Your Name"
+                        required
+                      />
+                    </div>
+                    <div class="form-group half-width">
+                      <input
+                        type="email"
+                        name="reply_to"
+                        placeholder="Your Email"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <textarea
+                      name="message"
+                      placeholder="Your message..."
+                      rows="3"
+                      required
+                    ></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Send
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div
+          id="roadmapModal"
+          class="modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modalTitle"
+          tabindex="-1"
+        >
+          <div class="modal-content" tabindex="0">
+            <button class="close" aria-label="Close roadmap modal">
+              &times;
+            </button>
+            <div class="roadmap">
+              <h2 id="modalTitle">MongoDB Learning Roadmap</h2>
+              <div class="roadmap-list" role="list">
+                <section
+                  class="roadmap-step"
+                  role="listitem"
+                  tabindex="0"
+                  aria-label="Beginner level topics"
+                >
+                  <h3>🔰 Beginner</h3>
+                  <ul>
+                    <li>What is NoSQL?</li>
+                    <li>MongoDB Introduction</li>
+                    <li>Installation & Setup</li>
+                    <li>Basic CRUD Operations</li>
+                    <li>Data Types and Documents</li>
+                  </ul>
+                </section>
+                <section
+                  class="roadmap-step"
+                  role="listitem"
+                  tabindex="0"
+                  aria-label="Intermediate level topics"
+                >
+                  <h3>🧱 Intermediate</h3>
+                  <ul>
+                    <li>Schema Design Patterns</li>
+                    <li>Embedded vs Referenced Data</li>
+                    <li>Indexes & Performance</li>
+                    <li>Aggregation Pipelines</li>
+                    <li>MongoDB Query Operators</li>
+                  </ul>
+                </section>
+                <section
+                  class="roadmap-step"
+                  role="listitem"
+                  tabindex="0"
+                  aria-label="Advanced level topics"
+                >
+                  <h3>🔐 Advanced</h3>
+                  <ul>
+                    <li>Data Modeling Best Practices</li>
+                    <li>Security: Roles & Auth</li>
+                    <li>Replication & High Availability</li>
+                    <li>Sharding Concepts</li>
+                    <li>Performance Optimization</li>
+                  </ul>
+                </section>
+                <section
+                  class="roadmap-step"
+                  role="listitem"
+                  tabindex="0"
+                  aria-label="Integration topics"
+                >
+                  <h3>🛠️ Integration</h3>
+                  <ul>
+                    <li>MongoDB with Node.js (Mongoose)</li>
+                    <li>REST APIs with Mongo</li>
+                    <li>MongoDB Atlas Cloud</li>
+                    <li>Dockerized Mongo</li>
+                  </ul>
+                </section>
+                <section
+                  class="roadmap-step"
+                  role="listitem"
+                  tabindex="0"
+                  aria-label="Job readiness topics"
+                >
+                  <h3>🎯 Job Ready</h3>
+                  <ul>
+                    <li>Certifications & Practice</li>
+                    <li>Real-World Projects</li>
+                    <li>Common Interview Questions</li>
+                    <li>Resume & Portfolio Setup</li>
+                  </ul>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h3>MongoUniverse</h3>
+          <p>The ultimate MongoDB learning platform</p>
+        </div>
+
+        <div class="footer-links">
+          <div class="link-group">
+            <h4>Learn</h4>
+            <ul>
+              <li><a href="#">Tutorials</a></li>
+              <li><a href="#">Roadmap</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Quizzes</a></li>
+            </ul>
+          </div>
+
+          <div class="link-group">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Cheat Sheets</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Community</a></li>
+            </ul>
+          </div>
+
+          <div class="link-group">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="social-links">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2023 MongoUniverse. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="./js/home.js"></script>
+  </body>
+</html>
