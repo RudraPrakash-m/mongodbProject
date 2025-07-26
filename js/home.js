@@ -3,17 +3,58 @@ document.addEventListener("DOMContentLoaded", function () {
   const themeToggle = document.getElementById("input");
   const savedTheme =
     localStorage.getItem("theme") ||
-    (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    (window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light");
 
   document.body.classList.add(savedTheme);
   if (themeToggle) themeToggle.checked = savedTheme === "light";
 
   themeToggle?.addEventListener("change", () => {
+    // Save current scroll position
+    const scrollPosition = window.scrollY;
+
     const newTheme = themeToggle.checked ? "light" : "dark";
     document.body.classList.remove("light", "dark");
     document.body.classList.add(newTheme);
     localStorage.setItem("theme", newTheme);
+
+    // Restore scroll position
+    window.scrollTo(0, scrollPosition);
   });
+
+  // Mobile menu functionality
+const hamburger = document.querySelector('.hamburger');
+const navContainer = document.querySelector('.nav-container');
+
+hamburger.addEventListener('click', () => {
+  const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+  hamburger.setAttribute('aria-expanded', !isExpanded);
+  navContainer.setAttribute('aria-expanded', !isExpanded);
+  
+  // Optional: Prevent body scroll when menu is open
+  document.body.style.overflow = isExpanded ? 'auto' : 'hidden';
+});
+
+// Close menu when clicking on nav links (for single page navigation)
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 992) {
+      hamburger.setAttribute('aria-expanded', 'false');
+      navContainer.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = 'auto';
+    }
+  });
+});
+
+// Close menu when resizing to desktop
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 992) {
+    hamburger.setAttribute('aria-expanded', 'false');
+    navContainer.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = 'auto';
+  }
+});
 
   // === MODAL FUNCTIONALITY ===
   const modal = document.getElementById("roadmapModal");
@@ -52,9 +93,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // redirect to index page
+  document.getElementById('logoButton').addEventListener('click', function() {
+  window.location.href = 'index.html';
+});
+
   // typing effect
   const element = document.getElementById("typingText");
-  const fullText = "From beginner to job-ready MongoDB developer with our structured learning path.";
+  const fullText =
+    "From beginner to job-ready MongoDB developer with our structured learning path.";
   let index = 0;
   let isDeleting = false;
 

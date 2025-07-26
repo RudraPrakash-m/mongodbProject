@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login</title>
+    <script defer src="../../js/login.js" type="module"></script>
+
+    <!-- <link rel="stylesheet" href="./login.css"> -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      body,
+      html {
+        height: 100%;
+        width: 100%;
+      }
+
+      .container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        --color: rgba(114, 114, 114, 0.3);
+        background-color: #191a1a;
+        background-image: linear-gradient(
+            0deg,
+            transparent 24%,
+            var(--color) 25%,
+            var(--color) 26%,
+            transparent 27%,
+            transparent 74%,
+            var(--color) 75%,
+            var(--color) 76%,
+            transparent 77%,
+            transparent
+          ),
+          linear-gradient(
+            90deg,
+            transparent 24%,
+            var(--color) 25%,
+            var(--color) 26%,
+            transparent 27%,
+            transparent 74%,
+            var(--color) 75%,
+            var(--color) 76%,
+            transparent 77%,
+            transparent
+          );
+        background-size: 55px 55px;
+        text-align: center;
+      }
+
+      .login-box {
+        position: relative;
+        border-radius: 16px;
+        padding: 40px;
+        width: 320px;
+        color: #fff;
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.068);
+        z-index: 0;
+        height: fit-content;
+        transition: box-shadow 0.4s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .login-box:hover {
+        box-shadow: 0 0 25px rgba(0, 255, 170, 0.4);
+      }
+
+      .login-box::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 16px;
+        background: linear-gradient(
+          270deg,
+          rgba(30, 39, 46, 0.4),
+          rgba(64, 115, 158, 0.3),
+          rgba(30, 39, 46, 0.4)
+        );
+        background-size: 600% 600%;
+        animation: gradientShift 10s ease infinite;
+        z-index: -1;
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .login-box h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+      .login-box > form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        align-items: center;
+      }
+
+      .login-box input {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 8px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        outline: none;
+        transition: outline 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .login-box input:focus {
+        box-shadow: 0 0 10px rgba(0, 255, 170, 0.6);
+      }
+
+      .login-box input::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      a {
+        position: relative;
+        display: inline-block;
+        padding: 10px 24px;
+        border: 2px solid #fefefe;
+        text-transform: uppercase;
+        color: #fefefe;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      a::before,
+      a::after {
+        content: "";
+        position: absolute;
+        background: linear-gradient(90deg, #2c3e50, #34495e);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      a::before {
+        top: 6px;
+        left: -2px;
+        width: calc(100% + 4px);
+        height: calc(100% - 12px);
+        transform: scaleY(1);
+      }
+
+      a:hover::before {
+        transform: scaleY(0);
+      }
+
+      a::after {
+        left: 6px;
+        top: -2px;
+        height: calc(100% + 4px);
+        width: calc(100% - 12px);
+        transform: scaleX(1);
+        transition-delay: 0.5s;
+      }
+
+      a:hover::after {
+        transform: scaleX(0);
+      }
+
+      a span {
+        position: relative;
+        z-index: 3;
+      }
+
+      button {
+        background-color: inherit;
+        border: none;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      button:hover {
+        transform: scale(1.2);
+      }
+
+      .errormsg {
+        width: 100%;
+        text-align: center;
+      }
+
+      .errormsg > p {
+        color: red;
+        font-size: 14px;
+        margin-top: 4px;
+      }
+
+      .signup {
+        color: rgb(48, 219, 48);
+        font-size: 14px;
+        text-align: center;
+        margin-top: 10px;
+        transition: color 0.3s;
+        font-weight: bold;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .signup:hover {
+        color: #fff;
+        text-decoration: underline;
+        transform: scale(1.2);
+      }
+      .signup:active {
+        transform: scale(0.9);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="login-box">
+        <h2>Login</h2>
+        <p>Sign in to access your MongoDB learning resources</p>
+        <form id="loginForm">
+          <input type="email" placeholder="Enter Your Email" required />
+          <input type="password" placeholder="Password" required />
+          <div class="errormsg"></div>
+          <button type="submit">
+            <a href="#"><span>Login</span></a>
+          </button>
+          <div class="signup">Register Now</div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

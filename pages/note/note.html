@@ -13,12 +13,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="../../style/note.css" />
-    <style></style>
   </head>
   <body>
     <nav>
       <div class="logo">
-        <button class="button" data-text="Awesome">
+        <button class="button" id="logoButton" data-text="Awesome">
           <span class="actual-text">&nbsp;MongoUniverse&nbsp;</span>
           <span aria-hidden="true" class="hover-text"
             >&nbsp;MongoUniverse&nbsp;</span
@@ -26,24 +25,36 @@
         </button>
       </div>
 
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-expanded="false"
+        aria-controls="nav-center"
+        aria-label="Toggle navigation"
+      >
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
       <div class="nav-center">
         <div class="nav-links">
           <a href="../../Home.html">Home</a>
           <a
-            href="#"
+            href=""
             id="roadmapBtn"
             aria-haspopup="dialog"
             aria-controls="roadmapModal"
             >Roadmap</a
           >
-          <a href="#" id="quizLink">Quizzes</a>
-          <a href="#">About</a>
+          <a href="../quiz/quiz.html" id="quizLink">Quizzes</a>
+          <a href="../about/about.html">About</a>
           <a href="../../Home.html#contactSection" class="nav-link">Contact</a>
         </div>
       </div>
 
       <div class="nav-right">
-        <a href="#" class="login-btn">Login</a>
+        <a href="../login/login.html" class="login-btn">Login</a>
         <label class="switch">
           <input id="input" type="checkbox" />
           <div class="slider round">

@@ -47,6 +47,7 @@
         overflow: hidden;
       }
 
+     
       .introduction {
         text-align: center;
         max-width: 800px;
@@ -257,23 +258,6 @@
         transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
       }
 
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-        h1 {
-          font-size: 2.5rem;
-        }
-
-        #typing-text {
-          font-size: 1.2rem;
-        }
-
-        .bg-element-1,
-        .bg-element-2,
-        .bg-element-3 {
-          display: none;
-        }
-      }
-
       /* Floating particles */
       .particle {
         position: absolute;
@@ -283,71 +267,6 @@
         z-index: 1;
       }
 
-      /* Scroll indicator */
-      .scroll-indicator {
-        position: absolute;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        z-index: 2;
-      }
-
-      .scroll-text {
-        margin-bottom: 10px;
-        font-size: 0.8rem;
-        color: #94a3b8;
-        animation: pulse 2s infinite;
-      }
-
-      .scroll-arrow {
-        width: 20px;
-        height: 30px;
-        border: 2px solid #94a3b8;
-        border-radius: 10px;
-        position: relative;
-      }
-
-      .scroll-arrow::after {
-        content: "";
-        position: absolute;
-        top: 5px;
-        left: 50%;
-        width: 4px;
-        height: 8px;
-        background: #94a3b8;
-        border-radius: 2px;
-        transform: translateX(-50%);
-        animation: scrollDown 2s infinite;
-      }
-
-      @keyframes scrollDown {
-        0% {
-          transform: translate(-50%, 0);
-          opacity: 0;
-        }
-        50% {
-          opacity: 1;
-        }
-        100% {
-          transform: translate(-50%, 10px);
-          opacity: 0;
-        }
-      }
-
-      @keyframes pulse {
-        0% {
-          opacity: 0.5;
-        }
-        50% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0.5;
-        }
-      }
       /* Mouse Scroll Indicator */
       .mouse-scroll {
         position: absolute;
@@ -389,8 +308,8 @@
 
       .features-section {
         padding: 4rem 2rem;
-        background-color: #0f172a; /* dark blue-gray */
-        color: #e2e8f0; /* light text */
+        background-color: #0f172a;
+        color: #e2e8f0;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         text-align: center;
       }
@@ -398,14 +317,14 @@
       .features-section h2 {
         font-size: 2.5rem;
         margin-bottom: 3rem;
-        color: #14b8a6; /* teal */
+        color: #14b8a6;
         font-weight: 700;
       }
 
       .features-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 4rem;
+        gap: 2rem;
         max-width: 1000px;
         margin: 0 auto;
       }
@@ -434,6 +353,101 @@
         line-height: 1.5;
         color: #cbd5e1;
       }
+
+      /* Responsive adjustments */
+      @media (max-width: 1024px) {
+        /* Medium devices (tablets, 768px and up) */
+        h1 {
+          font-size: 3rem;
+        }
+        
+        /* Hide floating documents on medium and small devices */
+        .document-shape {
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        /* Small devices (landscape phones, 576px and up) */
+        .container {
+          padding: 1.5rem;
+        }
+        
+        h1 {
+          font-size: 2.2rem;
+          margin-bottom: 1rem;
+        }
+
+        #typing-text {
+          font-size: 1.2rem;
+          margin-bottom: 2rem;
+          min-height: 50px;
+        }
+
+        .animated-button {
+          padding: 12px 28px;
+          font-size: 1rem;
+        }
+
+        .bg-element-1,
+        .bg-element-2,
+        .bg-element-3 {
+          display: none;
+        }
+
+        .features-section {
+          padding: 3rem 1.5rem;
+        }
+        
+        .features-section h2 {
+          font-size: 2rem;
+          margin-bottom: 2rem;
+        }
+        
+        .features-grid {
+          gap: 1.5rem;
+        }
+        
+        .feature-card {
+          padding: 1.5rem;
+        }
+        
+        .feature-card h3 {
+          font-size: 1.4rem;
+        }
+        
+        .feature-card p {
+          font-size: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        /* Extra small devices (portrait phones, less than 576px) */
+        h1 {
+          font-size: 1.8rem;
+        }
+        
+        #typing-text {
+          font-size: 1rem;
+          min-height: 40px;
+        }
+        
+        .features-section {
+          padding: 2rem 1rem;
+        }
+        
+        .features-section h2 {
+          font-size: 1.8rem;
+        }
+        
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+        
+        .feature-card {
+          padding: 1.2rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -443,7 +457,7 @@
       <div class="bg-element bg-element-2"></div>
       <div class="bg-element bg-element-3"></div>
 
-      <!-- Floating MongoDB documents -->
+      <!-- Floating MongoDB documents - will be hidden on medium and small devices -->
       <div class="document-shape document-1">
         {<br />
         &nbsp;&nbsp;_id: ObjectId(...),<br />
@@ -512,7 +526,7 @@
     </div>
 
     <!-- Scroll-To-Reveal Section -->
-    <section class="features-section">
+    <section class="features-section" id="features">
       <div class="features-content">
         <h2>Key Features</h2>
         <div class="features-grid">
@@ -566,7 +580,7 @@
       // Create floating particles
       function createParticles() {
         const container = document.querySelector(".container");
-        const particleCount = 20;
+        const particleCount = window.innerWidth < 768 ? 10 : 20;
 
         for (let i = 0; i < particleCount; i++) {
           const particle = document.createElement("div");
@@ -644,42 +658,33 @@
         });
       });
 
-      // Parallax effect for background elements
-      window.addEventListener("mousemove", function (e) {
-        const x = e.clientX / window.innerWidth;
-        const y = e.clientY / window.innerHeight;
+      // Parallax effect for background elements - only on larger screens
+      if (window.innerWidth > 768) {
+        window.addEventListener("mousemove", function (e) {
+          const x = e.clientX / window.innerWidth;
+          const y = e.clientY / window.innerHeight;
 
-        const bg1 = document.querySelector(".bg-element-1");
-        const bg2 = document.querySelector(".bg-element-2");
-        const bg3 = document.querySelector(".bg-element-3");
+          const bg1 = document.querySelector(".bg-element-1");
+          const bg2 = document.querySelector(".bg-element-2");
+          const bg3 = document.querySelector(".bg-element-3");
 
-        bg1.style.transform = `translate(${x * 20}px, ${y * 20}px)`;
-        bg2.style.transform = `translate(${x * -30}px, ${y * -30}px)`;
-        bg3.style.transform = `translate(${x * 15}px, ${y * -15}px)`;
-      });
-
-      const featuresSection = document.getElementById("features");
-      const mouseScroll = document.getElementById("mouseScroll");
+          if (bg1 && bg2 && bg3) {
+            bg1.style.transform = `translate(${x * 20}px, ${y * 20}px)`;
+            bg2.style.transform = `translate(${x * -30}px, ${y * -30}px)`;
+            bg3.style.transform = `translate(${x * 15}px, ${y * -15}px)`;
+          }
+        });
+      }
 
       // Smooth scroll on clicking the mouse icon
-      mouseScroll.addEventListener("click", () => {
-        featuresSection.scrollIntoView({ behavior: "smooth" });
-      });
+      const mouseScroll = document.getElementById("mouseScroll");
+      const featuresSection = document.getElementById("features");
 
-      let scrolledToFeature = false; // to run only once
-
-      window.addEventListener("scroll", () => {
-        if (scrolledToFeature) return; // prevent multiple triggers
-
-        // Detect if user scrolled down some pixels (e.g. 50)
-        if (window.scrollY > 50) {
-          const featureSection = document.querySelector(".features-section");
-          if (featureSection) {
-            featureSection.scrollIntoView({ behavior: "smooth" });
-            scrolledToFeature = true;
-          }
-        }
-      });
+      if (mouseScroll && featuresSection) {
+        mouseScroll.addEventListener("click", () => {
+          featuresSection.scrollIntoView({ behavior: "smooth" });
+        });
+      }
     </script>
   </body>
 </html>
